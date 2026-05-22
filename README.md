@@ -73,7 +73,28 @@ python -m aws_mcp_server.server
 
 ## MCP Client Configuration
 
-Use an absolute path to the installed console script. MCP servers using stdio must write protocol messages only to stdout; this server writes logs to stderr and a local file under `~/.aws-mcp-server/logs`.
+For published installs, prefer `uvx`. MCP servers using stdio must write protocol messages only to stdout; this server writes logs to stderr and a local file under `~/.aws-mcp-server/logs`.
+
+### Claude Desktop / Cursor / Windsurf / Cline
+
+Most MCP clients accept this `mcpServers` JSON shape:
+
+```json
+{
+  "mcpServers": {
+    "aws": {
+      "command": "uvx",
+      "args": ["mdev-aws-mcp-server"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1"
+      }
+    }
+  }
+}
+```
+
+For local development from this repository, use the installed console script path instead:
 
 ```json
 {
@@ -81,6 +102,32 @@ Use an absolute path to the installed console script. MCP servers using stdio mu
     "aws": {
       "command": "/absolute/path/to/aws-cli-mcp-server/.venv/bin/mdev-aws-mcp-server",
       "args": [],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1"
+      }
+    }
+  }
+}
+```
+
+### Claude Code CLI
+
+```bash
+claude mcp add aws --env AWS_PROFILE=default --env AWS_REGION=us-east-1 -- uvx mdev-aws-mcp-server
+```
+
+### VS Code MCP
+
+VS Code uses the same command/args/env model in its MCP configuration:
+
+```json
+{
+  "servers": {
+    "aws": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mdev-aws-mcp-server"],
       "env": {
         "AWS_PROFILE": "default",
         "AWS_REGION": "us-east-1"
