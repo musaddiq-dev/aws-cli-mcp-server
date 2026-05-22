@@ -1,0 +1,55 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.musaddiq-dev/aws-cli-mcp-server",
+  "description": "Python MCP server for AWS CLI inspection and operations",
+  "title": "AWS CLI MCP Server",
+  "repository": {
+    "url": "https://github.com/musaddiq-dev/aws-cli-mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "aws-mcp-server",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "AWS_REGION",
+          "description": "Default AWS region",
+          "isRequired": false,
+          "default": "us-east-1"
+        },
+        {
+          "name": "AWS_PROFILE",
+          "description": "AWS credentials profile",
+          "isRequired": false,
+          "default": "default"
+        },
+        {
+          "name": "AWS_MCP_WORKING_DIR",
+          "description": "Working directory for file operations",
+          "isRequired": false,
+          "default": "/tmp/aws-mcp-work"
+        },
+        {
+          "name": "AWS_MCP_REQUIRE_CONFIRMATION",
+          "description": "Emit warnings for destructive-looking operations",
+          "isRequired": false,
+          "default": "true"
+        },
+        {
+          "name": "AWS_MCP_LOG_LEVEL",
+          "description": "Application log level",
+          "isRequired": false,
+          "default": "INFO"
+        }
+      ]
+    }
+  ]
+}
