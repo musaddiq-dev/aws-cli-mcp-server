@@ -28,7 +28,7 @@ This server can execute AWS CLI commands using the credentials available to the 
 When published to PyPI, install or run the server like a standard Python MCP package:
 
 ```bash
-uvx aws-mcp-server
+uvx mdev-aws-mcp-server
 ```
 
 For local development from source:
@@ -62,7 +62,7 @@ cp .env.example .env
 ## Running
 
 ```bash
-aws-mcp-server
+mdev-aws-mcp-server
 ```
 
 From a local checkout before PyPI publication, run:
@@ -79,7 +79,7 @@ Use an absolute path to the installed console script. MCP servers using stdio mu
 {
   "mcpServers": {
     "aws": {
-      "command": "/absolute/path/to/aws-cli-mcp-server/.venv/bin/aws-mcp-server",
+      "command": "/absolute/path/to/aws-cli-mcp-server/.venv/bin/mdev-aws-mcp-server",
       "args": [],
       "env": {
         "AWS_PROFILE": "default",
@@ -125,7 +125,7 @@ aws sts get-caller-identity
 
 ## Distribution
 
-This repository is prepared for the common Python MCP distribution path: publish the package to PyPI, keep the `mcp-name` marker at the top of this README for MCP Registry ownership verification, and publish `server.json` metadata with the GitHub repository. After release, users should prefer `uvx aws-mcp-server` in local MCP client configurations.
+This repository is prepared for the common Python MCP distribution path: publish the package to PyPI, keep the `mcp-name` marker at the top of this README for MCP Registry ownership verification, and publish `server.json` metadata with the GitHub repository. After release, users should prefer `uvx mdev-aws-mcp-server` in local MCP client configurations.
 
 ## Security Notes
 

@@ -1,5 +1,5 @@
 [project]
-name = "aws-mcp-server"
+name = "mdev-aws-mcp-server"
 version = "0.1.0"
 description = "Model Context Protocol (MCP) server for AWS - comprehensive AWS CLI wrapper"
 readme = "README.md"
@@ -28,7 +28,7 @@ classifiers = [
 ]
 
 [project.scripts]
-"aws-mcp-server" = "aws_mcp_server.server:main"
+"mdev-aws-mcp-server" = "aws_mcp_server.server:main"
 
 [project.optional-dependencies]
 dev = [
