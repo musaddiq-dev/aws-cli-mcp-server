@@ -172,7 +172,14 @@ aws sts get-caller-identity
 
 ## Distribution
 
-This repository is prepared for the common Python MCP distribution path: publish the package to PyPI, keep the `mcp-name` marker at the top of this README for MCP Registry ownership verification, and publish `server.json` metadata with the GitHub repository. After release, users should prefer `uvx mdev-aws-mcp-server` in local MCP client configurations.
+This server is published through the standard Python MCP distribution path:
+
+- PyPI package: [`mdev-aws-mcp-server`](https://pypi.org/project/mdev-aws-mcp-server/)
+- MCP Registry name: `io.github.musaddiq-dev/aws-cli-mcp-server`
+- Runtime hint: `uvx`
+- Transport: `stdio`
+
+The `mcp-name` marker at the top of this README is required for MCP Registry ownership verification. Users should prefer `uvx mdev-aws-mcp-server` in local MCP client configurations.
 
 ## Security Notes
 
